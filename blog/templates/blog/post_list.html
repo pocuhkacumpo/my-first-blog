@@ -6,17 +6,16 @@
         <h1>Kate's Blog</h1>
         <h2>DjangoGirls Workshop</h2>
         
-        <p>Hi there!</p>
-        <p>It works!</p>
+        <p>This Blog was created and deployed during Kiev DjangoGirls event, May 16. 2015. You are welcome to google all the details and join the activity next time :-)</p>
         
-        <div>
-        <h2><a href="">Blog Post#1</a></h2>
-        <p>Text input</p>
-        </div>
+        {% for post in posts%}
+            <div>
+                <h2><a href="">{{ post.title }}</a></h2>
+                <p>{{ post.text|linebreaks }}</p>
+                <p>published: {{ post.published_date }}</p>
+
+            </div>
+        {% endfor %}
         
-        <div>
-        <h2><a href="">Blog Post#2</a></h2>
-        <p>Text input</p>
-        </div>
     </body>
 </html>
